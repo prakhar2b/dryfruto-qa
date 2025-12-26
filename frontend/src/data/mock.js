@@ -142,10 +142,9 @@ export const products = [
     category: "nuts-dry-fruits",
     type: "Walnuts",
     basePrice: 250,
-    image: "https://images.unsplash.com/photo-1596362601603-90809e495b47?w=500&h=500&fit=crop",
+    image: "https://images.pexels.com/photos/4033327/pexels-photo-4033327.jpeg?auto=compress&cs=tinysrgb&w=500",
     images: [
-      "https://images.unsplash.com/photo-1596362601603-90809e495b47?w=500&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1600189261867-30e5ffe7b8da?w=500&h=500&fit=crop"
+      "https://images.pexels.com/photos/4033327/pexels-photo-4033327.jpeg?auto=compress&cs=tinysrgb&w=500"
     ],
     sku: "DRF004",
     shortDescription: "Light halves walnut kernels, perfect for brain health.",
@@ -166,9 +165,9 @@ export const products = [
     category: "nuts-dry-fruits",
     type: "Raisins",
     basePrice: 85,
-    image: "https://images.unsplash.com/photo-1596591868231-a41d1c98958a?w=500&h=500&fit=crop",
+    image: "https://images.pexels.com/photos/4033329/pexels-photo-4033329.jpeg?auto=compress&cs=tinysrgb&w=500",
     images: [
-      "https://images.unsplash.com/photo-1596591868231-a41d1c98958a?w=500&h=500&fit=crop"
+      "https://images.pexels.com/photos/4033329/pexels-photo-4033329.jpeg?auto=compress&cs=tinysrgb&w=500"
     ],
     sku: "DRF005",
     shortDescription: "Premium Afghan black raisins, naturally sweet and juicy.",
@@ -189,10 +188,9 @@ export const products = [
     category: "mix-dry-fruits",
     type: "Mix dry fruits",
     basePrice: 165,
-    image: "https://images.unsplash.com/photo-1616684000067-36952fde56ec?w=500&h=500&fit=crop",
+    image: "https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=500",
     images: [
-      "https://images.unsplash.com/photo-1616684000067-36952fde56ec?w=500&h=500&fit=crop",
-      "https://images.unsplash.com/photo-1599599810769-bcde5a160d32?w=500&h=500&fit=crop"
+      "https://images.pexels.com/photos/1295572/pexels-photo-1295572.jpeg?auto=compress&cs=tinysrgb&w=500"
     ],
     sku: "DRF006",
     shortDescription: "Perfect blend of almonds, cashews, raisins, and more.",
@@ -213,9 +211,9 @@ export const products = [
     category: "nuts-dry-fruits",
     type: "Pistachios",
     basePrice: 195,
-    image: "https://images.unsplash.com/photo-1525706069475-35c94e1bf99d?w=500&h=500&fit=crop",
+    image: "https://images.pexels.com/photos/6157057/pexels-photo-6157057.jpeg?auto=compress&cs=tinysrgb&w=500",
     images: [
-      "https://images.unsplash.com/photo-1525706069475-35c94e1bf99d?w=500&h=500&fit=crop"
+      "https://images.pexels.com/photos/6157057/pexels-photo-6157057.jpeg?auto=compress&cs=tinysrgb&w=500"
     ],
     sku: "DRF007",
     shortDescription: "Large Akbari pistachios with vibrant green color.",
