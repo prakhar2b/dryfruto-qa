@@ -175,6 +175,7 @@ class SiteSettings(BaseModel):
     logo: str = ""
     phone: str = "9870990795"
     email: str = "info@dryfruto.com"
+    careerEmail: str = "careers@dryfruto.com"
     address: str = "123, Main Street, New Delhi, India"
     whatsappLink: str = "https://wa.me/919870990795"
     facebookLink: str = ""
@@ -188,6 +189,7 @@ class SiteSettingsUpdate(BaseModel):
     logo: Optional[str] = None
     phone: Optional[str] = None
     email: Optional[str] = None
+    careerEmail: Optional[str] = None
     address: Optional[str] = None
     whatsappLink: Optional[str] = None
     facebookLink: Optional[str] = None
