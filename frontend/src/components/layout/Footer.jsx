@@ -65,7 +65,10 @@ const Footer = () => {
                 <Link to="/" className="text-gray-300 hover:text-amber-300 transition-colors text-sm">Home</Link>
               </li>
               <li>
-                <Link to="/products" className="text-gray-300 hover:text-amber-300 transition-colors text-sm">All Products</Link>
+                <Link to="/bulk-order" className="text-gray-300 hover:text-amber-300 transition-colors text-sm">Bulk Order</Link>
+              </li>
+              <li>
+                <Link to="/career" className="text-gray-300 hover:text-amber-300 transition-colors text-sm">Career</Link>
               </li>
               <li>
                 <a href="#about" className="text-gray-300 hover:text-amber-300 transition-colors text-sm">About Us</a>
@@ -73,18 +76,12 @@ const Footer = () => {
               <li>
                 <a href="#contact" className="text-gray-300 hover:text-amber-300 transition-colors text-sm">Contact Us</a>
               </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-amber-300 transition-colors text-sm">Privacy Policy</a>
-              </li>
-              <li>
-                <a href="#" className="text-gray-300 hover:text-amber-300 transition-colors text-sm">Terms & Conditions</a>
-              </li>
             </ul>
           </div>
 
-          {/* Categories */}
+          {/* Shop */}
           <div>
-            <h3 className="text-lg font-semibold mb-4 text-amber-300">Categories</h3>
+            <h3 className="text-lg font-semibold mb-4 text-amber-300">Shop</h3>
             <ul className="space-y-2">
               {categories.map((cat) => (
                 <li key={cat.id}>
