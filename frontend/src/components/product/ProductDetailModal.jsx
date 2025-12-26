@@ -3,12 +3,12 @@ import { X, Phone, MessageCircle, Heart, HeartHandshake, Truck, Shield, Check } 
 import { useData } from '../../context/DataContext';
 
 const sizeVariants = [
-  { label: "100 gram", multiplier: 1 },
-  { label: "250 gram", multiplier: 2.4 },
-  { label: "500 gram", multiplier: 4.5 },
-  { label: "1 kg", multiplier: 8.5 },
-  { label: "2 kg", multiplier: 16 },
-  { label: "5 kg", multiplier: 38 }
+  { key: '100g', label: "100 gram", multiplier: 1 },
+  { key: '250g', label: "250 gram", multiplier: 2.4 },
+  { key: '500g', label: "500 gram", multiplier: 4.5 },
+  { key: '1kg', label: "1 kg", multiplier: 8.5 },
+  { key: '2kg', label: "2 kg", multiplier: 16 },
+  { key: '5kg', label: "5 kg", multiplier: 38 }
 ];
 
 const ProductDetailModal = ({ product, isOpen, onClose }) => {
@@ -19,12 +19,16 @@ const ProductDetailModal = ({ product, isOpen, onClose }) => {
 
   if (!isOpen || !product) return null;
 
-  const currentPrice = Math.round(product.basePrice * sizeVariants[selectedSize].multiplier);
+  const currentVariant = sizeVariants[selectedSize];
+  // Use custom price if available, otherwise calculate from base price
+  const currentPrice = product.priceVariants?.[currentVariant.key] 
+    ? product.priceVariants[currentVariant.key]
+    : Math.round(product.basePrice * currentVariant.multiplier);
   const whatsappLink = siteSettings.whatsappLink || `https://wa.me/91${siteSettings.phone}`;
   const callLink = `tel:+91${siteSettings.phone}`;
 
   const handleWhatsApp = () => {
-    const message = `Hi, I'm interested in ${product.name} (${sizeVariants[selectedSize].label}) - ₹${currentPrice}`;
+    const message = `Hi, I'm interested in ${product.name} (${currentVariant.label}) - ₹${currentPrice}`;
     window.open(`${whatsappLink}?text=${encodeURIComponent(message)}`, '_blank');
   };
 
