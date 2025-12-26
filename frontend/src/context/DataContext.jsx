@@ -98,11 +98,65 @@ export const DataProvider = ({ children }) => {
       setGiftBoxes(giftRes.data);
       if (settingsRes.data && Object.keys(settingsRes.data).length > 0) {
         setSiteSettings(settingsRes.data);
+        // Apply theme CSS variables
+        if (settingsRes.data.theme) {
+          applyThemeCSS(settingsRes.data.theme);
+        }
       }
     } catch (error) {
       console.error('Error fetching data:', error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  // Apply theme CSS variables to document
+  const applyThemeCSS = (theme) => {
+    const root = document.documentElement;
+    
+    if (theme.colors) {
+      Object.entries(theme.colors).forEach(([key, value]) => {
+        root.style.setProperty(`--color-${key}`, value);
+      });
+    }
+    
+    if (theme.typography) {
+      root.style.setProperty('--font-family', theme.typography.fontFamily);
+      root.style.setProperty('--heading-font', theme.typography.headingFont);
+      root.style.setProperty('--base-font-size', theme.typography.baseFontSize);
+      root.style.setProperty('--h1-size', theme.typography.h1Size);
+      root.style.setProperty('--h2-size', theme.typography.h2Size);
+      root.style.setProperty('--h3-size', theme.typography.h3Size);
+    }
+    
+    if (theme.header) {
+      root.style.setProperty('--header-bg', theme.header.background);
+      root.style.setProperty('--header-text', theme.header.text);
+      root.style.setProperty('--header-nav-text', theme.header.navText);
+      root.style.setProperty('--header-nav-hover', theme.header.navHover);
+    }
+    
+    if (theme.footer) {
+      root.style.setProperty('--footer-bg', theme.footer.background);
+      root.style.setProperty('--footer-text', theme.footer.text);
+      root.style.setProperty('--footer-link', theme.footer.linkColor);
+    }
+    
+    if (theme.buttons) {
+      root.style.setProperty('--btn-primary-bg', theme.buttons.primaryBg);
+      root.style.setProperty('--btn-primary-text', theme.buttons.primaryText);
+      root.style.setProperty('--btn-primary-hover', theme.buttons.primaryHover);
+      root.style.setProperty('--btn-secondary-bg', theme.buttons.secondaryBg);
+      root.style.setProperty('--btn-secondary-text', theme.buttons.secondaryText);
+      root.style.setProperty('--btn-secondary-hover', theme.buttons.secondaryHover);
+      root.style.setProperty('--btn-radius', theme.buttons.borderRadius);
+    }
+    
+    if (theme.cards) {
+      root.style.setProperty('--card-bg', theme.cards.background);
+      root.style.setProperty('--card-border', theme.cards.border);
+      root.style.setProperty('--card-shadow', theme.cards.shadow);
+      root.style.setProperty('--card-radius', theme.cards.borderRadius);
     }
   };
 
