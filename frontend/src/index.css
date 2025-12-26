@@ -4,10 +4,7 @@
 
 body {
     margin: 0;
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
+    font-family: var(--font-family, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -15,6 +12,56 @@ body {
 code {
     font-family:
         source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+/* Theme CSS Variables */
+:root {
+    /* Colors */
+    --color-primary: #3d2518;
+    --color-primaryLight: #4d2f20;
+    --color-accent: #f59e0b;
+    --color-accentHover: #d97706;
+    --color-background: #fffbeb;
+    --color-backgroundAlt: #fef3c7;
+    --color-text: #1f2937;
+    --color-textLight: #6b7280;
+    --color-white: #ffffff;
+    --color-success: #16a34a;
+    --color-error: #dc2626;
+    
+    /* Typography */
+    --font-family: Inter, system-ui, sans-serif;
+    --heading-font: Inter, system-ui, sans-serif;
+    --base-font-size: 16px;
+    --h1-size: 3rem;
+    --h2-size: 2rem;
+    --h3-size: 1.5rem;
+    
+    /* Header */
+    --header-bg: #3d2518;
+    --header-text: #ffffff;
+    --header-nav-text: #ffffff;
+    --header-nav-hover: #f59e0b;
+    
+    /* Footer */
+    --footer-bg: #3d2518;
+    --footer-text: #fef3c7;
+    --footer-link: #f59e0b;
+    
+    /* Buttons */
+    --btn-primary-bg: #f59e0b;
+    --btn-primary-text: #ffffff;
+    --btn-primary-hover: #d97706;
+    --btn-secondary-bg: #3d2518;
+    --btn-secondary-text: #ffffff;
+    --btn-secondary-hover: #2d1810;
+    --btn-radius: 0.5rem;
+    
+    /* Cards */
+    --card-bg: #ffffff;
+    --card-border: #e5e7eb;
+    --card-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    --card-radius: 1rem;
 }
 
 @layer base {
