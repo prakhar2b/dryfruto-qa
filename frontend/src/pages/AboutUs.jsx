@@ -7,25 +7,62 @@ import Footer from '../components/layout/Footer';
 const AboutUs = () => {
   const { siteSettings } = useData();
 
-  const values = [
-    { icon: Heart, title: 'Quality First', desc: 'We source only the finest dry fruits from trusted farms across the globe.' },
-    { icon: Leaf, title: 'Natural & Pure', desc: 'No artificial additives, preservatives, or chemicals in our products.' },
-    { icon: Shield, title: 'Trust & Transparency', desc: 'Honest pricing and complete transparency in our business practices.' },
-    { icon: Truck, title: 'Fresh Delivery', desc: 'Carefully packed and delivered fresh to your doorstep.' }
-  ];
+  // Icon mapping for values
+  const iconMap = {
+    'Quality First': Heart,
+    'Natural & Pure': Leaf,
+    'Trust & Transparency': Shield,
+    'Fresh Delivery': Truck,
+  };
 
-  const stats = [
+  // Default values with fallbacks from settings
+  const values = (siteSettings.aboutValues || [
+    { title: 'Quality First', desc: 'We source only the finest dry fruits from trusted farms across the globe.' },
+    { title: 'Natural & Pure', desc: 'No artificial additives, preservatives, or chemicals in our products.' },
+    { title: 'Trust & Transparency', desc: 'Honest pricing and complete transparency in our business practices.' },
+    { title: 'Fresh Delivery', desc: 'Carefully packed and delivered fresh to your doorstep.' }
+  ]).map((value, index) => ({
+    ...value,
+    icon: iconMap[value.title] || [Heart, Leaf, Shield, Truck][index % 4]
+  }));
+
+  const stats = siteSettings.aboutStats || [
     { number: '10+', label: 'Years of Experience' },
     { number: '50K+', label: 'Happy Customers' },
     { number: '100+', label: 'Premium Products' },
     { number: '500+', label: 'Cities Served' }
   ];
 
-  const team = [
+  const team = siteSettings.aboutWhyChooseUs || [
     { name: 'Quality Assurance', desc: 'Every product goes through strict quality checks before reaching you.' },
     { name: 'Customer Support', desc: 'Dedicated team to assist you with any queries or concerns.' },
     { name: 'Logistics', desc: 'Efficient delivery network ensuring timely and safe delivery.' }
   ];
+
+  const storyParagraphs = siteSettings.aboutStoryParagraphs || [
+    `${siteSettings.businessName} was born from a simple belief – everyone deserves access to pure, high-quality dry fruits at fair prices. What started as a small family business has grown into a trusted name in the dry fruits industry.`,
+    'We work directly with farmers and suppliers to bring you the freshest products without any middlemen. Our commitment to quality and customer satisfaction has helped us build lasting relationships with thousands of families across India.',
+    'Today, we continue our journey with the same passion and dedication, bringing health and happiness to every household through our carefully curated selection of dry fruits, nuts, seeds, and berries.'
+  ];
+
+  const visionText = siteSettings.aboutVision || "To be India's most trusted and preferred destination for premium dry fruits, making healthy eating accessible and affordable for every household. We envision a future where quality nutrition is not a luxury but a way of life for all.";
+  
+  const visionPoints = siteSettings.aboutVisionPoints || [
+    'Be the #1 dry fruits brand in India',
+    'Reach every corner of the country',
+    'Promote healthy living through quality products'
+  ];
+
+  const missionText = siteSettings.aboutMission || "To deliver the finest quality dry fruits sourced directly from farms, ensuring freshness, purity, and value for our customers. We are committed to ethical sourcing, sustainable practices, and exceptional customer service.";
+  
+  const missionPoints = siteSettings.aboutMissionPoints || [
+    'Source directly from trusted farmers',
+    'Maintain highest quality standards',
+    'Provide excellent customer experience'
+  ];
+
+  const storyImage = siteSettings.aboutStoryImage || 'https://images.unsplash.com/photo-1596591868264-6d8f43c0e648?w=600';
+  const heroSubtitle = siteSettings.aboutHeroSubtitle || 'Your trusted partner for premium quality dry fruits, nuts, and seeds since 2014.';
 
   return (
     <div className="min-h-screen bg-white">
