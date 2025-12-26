@@ -454,13 +454,6 @@ const CSSManager = () => {
                   <p className="text-xs text-gray-500">{currentTab?.description}</p>
                 </div>
               </div>
-              <button
-                onClick={() => openPreview(getPreviewPath(activeTab))}
-                className="text-sm text-amber-600 hover:text-amber-700 flex items-center gap-1"
-              >
-                <Eye className="w-4 h-4" />
-                Preview
-              </button>
             </div>
             
             <div className="p-6 max-h-[600px] overflow-y-auto">
