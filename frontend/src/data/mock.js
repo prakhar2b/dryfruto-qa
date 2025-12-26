@@ -378,7 +378,7 @@ export const giftBoxes = [
   {
     id: 106,
     name: "Diwali Gift Box",
-    image: "https://images.unsplash.com/photo-1607344645866-009c320b63e0?w=500&h=500&fit=crop",
+    image: "https://images.pexels.com/photos/4033321/pexels-photo-4033321.jpeg?auto=compress&cs=tinysrgb&w=500",
     price: 1799
   }
 ];
@@ -388,31 +388,31 @@ export const testimonials = [
     id: 1,
     name: "Priya Sharma",
     review: "Excellent quality dry fruits! I've been ordering from DryFruto for over a year now. The almonds and cashews are always fresh and delicious.",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop"
+    avatar: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100"
   },
   {
     id: 2,
     name: "Rajesh Kumar",
     review: "Best place for premium dry fruits. The packaging is excellent and delivery is always on time. Highly recommended!",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop"
+    avatar: "https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=100"
   },
   {
     id: 3,
     name: "Anita Patel",
     review: "The gift boxes are perfect for occasions. Ordered for Diwali and everyone loved them. Great quality products!",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+    avatar: "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=100"
   },
   {
     id: 4,
     name: "Mohammed Ali",
     review: "Fresh and premium quality nuts. The Makhana is especially good - crispy and tasty. Will order again!",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+    avatar: "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=100"
   },
   {
     id: 5,
     name: "Sunita Verma",
     review: "Amazing customer service and product quality. The dates are the best I've ever had. Thank you DryFruto!",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+    avatar: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100"
   },
   {
     id: 6,
