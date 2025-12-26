@@ -278,6 +278,8 @@ class SiteSettings(BaseModel):
             "borderRadius": "1rem"
         }
     }
+    # Page-specific CSS styles
+    pageStyles: dict = {}
 
 class SiteSettingsUpdate(BaseModel):
     businessName: Optional[str] = None
