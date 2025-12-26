@@ -40,7 +40,7 @@ const Header = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-3">
+            <a href="/" onClick={handleHomeClick} className="flex items-center gap-3">
               <img 
                 src={LOGO_URL} 
                 alt={siteSettings.businessName} 
@@ -50,7 +50,7 @@ const Header = () => {
                 <h1 className="text-xl font-bold text-white">{siteSettings.businessName}</h1>
                 <p className="text-xs text-amber-300 italic">{siteSettings.slogan}</p>
               </div>
-            </Link>
+            </a>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
