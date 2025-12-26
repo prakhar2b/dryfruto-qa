@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Package, Phone, MessageCircle, CheckCircle, Truck, Shield, Award } from 'lucide-react';
 import { useData } from '../context/DataContext';
+import Layout from '../components/layout/Layout';
 
 const BulkOrder = () => {
   const { siteSettings } = useData();
