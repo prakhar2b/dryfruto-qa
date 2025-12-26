@@ -140,12 +140,17 @@ const Footer = () => {
             <p className="text-gray-400 text-sm">
               © 2025 {siteSettings.businessName}. All rights reserved.
             </p>
-            <div className="flex items-center gap-4">
-              <img src="https://img.icons8.com/color/48/visa.png" alt="Visa" className="h-8" />
-              <img src="https://img.icons8.com/color/48/mastercard.png" alt="Mastercard" className="h-8" />
-              <img src="https://img.icons8.com/color/48/paypal.png" alt="PayPal" className="h-8" />
-              <img src="https://img.icons8.com/color/48/google-pay-india.png" alt="GPay" className="h-8" />
-            </div>
+            <p className="text-gray-400 text-sm">
+              Designed and hosted by{' '}
+              <a 
+                href="https://statell.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-amber-400 hover:text-amber-300 transition-colors"
+              >
+                Statell Marketing
+              </a>
+            </p>
           </div>
         </div>
       </div>
