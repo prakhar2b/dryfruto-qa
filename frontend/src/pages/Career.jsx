@@ -1,7 +1,8 @@
 import React from 'react';
 import { Briefcase, MapPin, Clock, ArrowRight, Users, Heart, TrendingUp, Award } from 'lucide-react';
 import { useData } from '../context/DataContext';
-import Layout from '../components/layout/Layout';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 
 const Career = () => {
   const { siteSettings } = useData();
