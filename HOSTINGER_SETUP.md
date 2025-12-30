@@ -214,18 +214,36 @@ docker exec -it sm2024db01 mongosh dryfruto --eval "db.products.countDocuments()
 ## Troubleshooting
 
 ### Data not showing on website?
-Check if auto-seed ran:
+
+**Option 1: Check if auto-seed ran**
 ```bash
 docker logs sm2024api01 | grep -i seed
 ```
 
 You should see:
 ```
+MongoDB connection successful
 Database is empty, auto-seeding with default data...
 Seeded 6 categories
 Seeded 12 products
 ...
 Auto-seed completed successfully!
+```
+
+**Option 2: Manually trigger seed via Admin Panel**
+1. Go to `http://statellmarketing.com:9001/admin`
+2. Click "Seed Initial Data" button
+3. Confirm the action
+4. Wait for success message
+
+**Option 3: Manually trigger seed via API**
+```bash
+curl -X POST http://statellmarketing.com:9001/api/seed-data
+```
+
+Expected response:
+```json
+{"message":"Data seeded successfully","categories":6,"products":12,"heroSlides":3,"testimonials":6,"giftBoxes":6}
 ```
 
 ### Backend not starting?
@@ -240,6 +258,16 @@ docker ps | grep mongodb
 
 # Check MongoDB logs
 docker logs sm2024db01
+
+# Test MongoDB connection from backend container
+docker exec -it sm2024api01 python -c "from motor.motor_asyncio import AsyncIOMotorClient; c = AsyncIOMotorClient('mongodb://mongodb:27017'); print('Connected!')"
+```
+
+### Import error for seed_data?
+The seed_data.py file should be in /app/ inside the backend container:
+```bash
+docker exec -it sm2024api01 ls -la /app/
+# Should show seed_data.py
 ```
 
 ---
