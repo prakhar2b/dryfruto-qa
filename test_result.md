@@ -236,6 +236,8 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Implemented button alignment fix (verified working via screenshots) and configurable bulk order settings. Need to test: 1) Admin panel can save/load bulkOrderProductTypes and bulkOrderBenefits, 2) Changes in admin panel reflect on the Bulk Order page. Test the full flow: add a new product type in admin, save, verify it appears in the dropdown on /bulk-order page."
+  - agent: "main"
+    message: "DEPLOYMENT FIXES IMPLEMENTED: 1) Added /api/health endpoint for Docker health checks - returns database connectivity status. 2) Improved seed-data endpoint with better error handling and logging. 3) Updated nginx Dockerfile to gracefully handle missing SSL certificates (disables HTTPS block if certs not found). Need to test: 1) /api/health endpoint returns proper status, 2) /api/seed-data endpoint returns informative error messages, 3) All existing functionality still works correctly."
   - agent: "testing"
     message: "✅ BACKEND TESTING COMPLETE: Bulk Order Settings API is fully functional. All 5 backend tests passed: API connectivity, GET/PUT site-settings endpoints, data persistence verification. The bulkOrderProductTypes and bulkOrderBenefits fields work correctly. Backend is ready for frontend integration testing. Note: I only tested backend APIs as instructed - frontend testing was not performed."
   - agent: "testing"
