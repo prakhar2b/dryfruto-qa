@@ -91,6 +91,24 @@ const Dashboard = () => {
         ))}
       </div>
 
+      {/* Quick Actions */}
+      <div className="bg-white rounded-xl shadow-sm p-6">
+        <h2 className="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h2>
+        <div className="flex flex-wrap gap-4">
+          <button
+            onClick={seedData}
+            disabled={seeding}
+            className="flex items-center gap-2 bg-[#7CB342] hover:bg-[#689F38] text-white px-4 py-2 rounded-lg transition-colors disabled:opacity-50"
+          >
+            <RefreshCw className={`w-5 h-5 ${seeding ? 'animate-spin' : ''}`} />
+            {seeding ? 'Seeding...' : 'Seed Initial Data'}
+          </button>
+        </div>
+        <p className="text-gray-500 text-sm mt-4">
+          Click "Seed Initial Data" to reset the database with default products, categories, and other content.
+        </p>
+      </div>
+
     </div>
   );
 };
