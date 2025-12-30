@@ -2,7 +2,7 @@ services:
   # MongoDB Database
   mongodb:
     image: mongo:6.0
-    container_name: statell-mongodb
+    container_name: sm2024db01
     restart: unless-stopped
     environment:
       MONGO_INITDB_DATABASE: dryfruto
@@ -16,7 +16,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: statell-backend
+    container_name: sm2024api01
     restart: unless-stopped
     environment:
       - MONGO_URL=mongodb://mongodb:27017
@@ -35,7 +35,7 @@ services:
       dockerfile: Dockerfile
       args:
         - REACT_APP_BACKEND_URL=https://statellmarketing.com
-    container_name: statell-frontend
+    container_name: sm2024web01
     restart: unless-stopped
     depends_on:
       - backend
@@ -45,7 +45,7 @@ services:
   # Nginx Reverse Proxy (HTTP & HTTPS)
   nginx:
     image: nginx:alpine
-    container_name: statell-nginx
+    container_name: sm2024proxy01
     restart: unless-stopped
     ports:
       - "80:80"
@@ -63,7 +63,7 @@ services:
   # Certbot for SSL (Let's Encrypt)
   certbot:
     image: certbot/certbot
-    container_name: statell-certbot
+    container_name: sm2024ssl01
     volumes:
       - ./certbot/conf:/etc/letsencrypt
       - ./certbot/www:/var/www/certbot
