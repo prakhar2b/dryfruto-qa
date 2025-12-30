@@ -10,8 +10,14 @@ services:
       - mongodb_data:/data/db
     networks:
       - app-network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/dryfruto --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
 
-  # Backend API
+  # Backend API (Auto-seeds data on first startup)
   backend:
     build:
       context: ./backend
@@ -24,11 +30,18 @@ services:
     volumes:
       - uploads_data:/app/uploads
     depends_on:
-      - mongodb
+      mongodb:
+        condition: service_healthy
     networks:
       - app-network
+    healthcheck:
+      test: curl -f http://localhost:8001/api/health || exit 1
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
 
-  # Frontend (Node 14)
+  # Frontend (React with Yarn)
   frontend:
     build:
       context: ./frontend
@@ -38,7 +51,8 @@ services:
     container_name: sm2024web01
     restart: unless-stopped
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     networks:
       - app-network
 
