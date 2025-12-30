@@ -1,13 +1,13 @@
-# Frontend Dockerfile - Node v14
-FROM node:14-alpine AS builder
+# Frontend Dockerfile - React with Yarn
+FROM node:18-alpine AS builder
 
 WORKDIR /app
 
 # Copy package files
-COPY package.json package-lock.json* ./
+COPY package.json yarn.lock* ./
 
-# Install dependencies
-RUN npm install
+# Install dependencies using yarn
+RUN yarn install --frozen-lockfile || yarn install
 
 # Copy source code
 COPY . ./
@@ -17,7 +17,7 @@ ARG REACT_APP_BACKEND_URL
 ENV REACT_APP_BACKEND_URL=${REACT_APP_BACKEND_URL}
 
 # Build the app
-RUN npm run build
+RUN yarn build
 
 # Production stage with nginx
 FROM nginx:alpine
